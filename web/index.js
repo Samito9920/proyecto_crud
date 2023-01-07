@@ -1,6 +1,7 @@
-//window.onload = loadTasks;
-var taskList;
+const formulario = document.querySelector("form");
+let table = document.getElementById("target");
 var btnSave = document.getElementById('guardar');
+var datos = []
 
 
 function init(){
@@ -18,7 +19,7 @@ function init(){
 }
 
 //Agregar
-function saveTask(event){
+function saveTask(){
   const estudiante =
   ({
     "NOMBRE": document.getElementById("nombreEstudiante").value,
@@ -31,20 +32,8 @@ function saveTask(event){
     "NOTA": document.getElementById("notaEstudiante").value,
   });
 
-  for(i = 0; i<= estudiante.length; i++){
-    if(estudiante.i == ""){
-      alert("Por favor ingresa toda la información")
-      return false;
-    }
-  }
-
-  //Intentas hacer un for para ver si ya esta registrado
- /* if(document.querySelector(`input.cedulaEstudiante[value="${estudiante.value}"]`)){
-  alert("El estudiante ya se encuentra registrado");
-  return false;
-  //Para guardar
-  }*/
-  let datos = JSON.parse(localStorage.getItem('estudianteregistrado')) ? JSON.parse(localStorage.getItem('estudianteregistrado')) : []
+  
+  datos = JSON.parse(localStorage.getItem('estudianteregistrado')) ? JSON.parse(localStorage.getItem('estudianteregistrado')) : []
   console.log(estudiante)
   datos.push(estudiante)
   console.log(datos)
@@ -52,44 +41,75 @@ function saveTask(event){
  localStorage.setItem('estudianteregistrado', JSON.stringify(datos))
  console.log(estudiante)
 
-listar(estudiante);
-  
+ //Borrar inputs
+ document.getElementById("nombreEstudiante").value = '',
+ document.getElementById("cedulaEstudiante").value = '', 
+ document.getElementById("tlfEstudiante").value = '',
+ document.getElementById("apellidosEstudiante").value = '',
+ document.getElementById("fcNaEstudiante").value = '',
+ document.getElementById("emailEstudiante").value = '',
+ document.getElementById("nivelEstudiante").value = '0',
+ document.getElementById("notaEstudiante").value = '';
+
+  listar();
 }
 
 //Listar y mostrar tabla
-function listar(estudiante){
- let table = document.getElementById("target");
-let arr = JSON.parse(localStorage.getItem("estudianteregistrado")) ? JSON.parse(localStorage.getItem("estudianteregistrado")) : []
-console.log(arr)
+function listar(){
+  table.innerHTML ="";
+  datos = JSON.parse(localStorage.getItem("estudianteregistrado"));
+  if(datos === null){
+    datos =[];
+  }else{
+    table.innerHTML+= ` <theat><tr> <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Cedula</th>
+                            <th class="hidden-phone">Teléfono</th>
+                            <th>Fecha D. Nacimiento</th>
+                            <th>Email</th>
+                            <th>Nota último año</th>
+                            <th>Nivel</th></tr></theat>`
 
-arr.forEach(element => {
-  table.innerHTML += "<td>" + element.NOMBRE + "</td> " 
-  +"<td>" + element.APELLIDOS + "</td>"
-  + "<td id='txtcedula'>" + element.CEDULA + "</td>" +
-  "<td>" + element.TELEFONO + "</td>" 
-  + "<td>" + element.FECHA + "</td>" 
-  + "<td>" + element.EMAIL + "</td>" 
-  + "<td>" + element.NOTA + "</td>" 
-  + "<td>" + element.NIVEL + "</td>"
-  +"<td><button onclick='#poner funcion de editar' class='btn btn-warning'>Editar</button></td>"
-  +"<td><button onclick='eliminar()' class='btn btn-danger'>Eliminar </button></td>"
-});
- 
+    datos.forEach((element, index) => {
+      var ced = element.CEDULA;
+      table.innerHTML += `<td> ${element.NOMBRE} </td> 
+      <td >${element.APELLIDOS}</td>
+      <td id='txtcedula'>${element.CEDULA}</td>
+      <td>${element.TELEFONO}</td> 
+      <td>${element.FECHA}</td>
+      <td>${element.EMAIL}</td>
+      <td>${element.NOTA}</td> 
+      <td>${element.NIVEL}</td>
+      <td><button onclick='editar(${index})' class='btn btn-warning'>Editar</button></td>
+      <td><button onclick="eliminar(${index})" class='btn btn-danger'>Eliminar </button></td>`
+    });
+  }
 }
 
 //Eliminar
 
-function eliminar(){
-  let tasks = Array.from(JSON.parse(localStorage.getItem("estudianteregistrado")));
-    tasks.forEach(task => {
-    if (task.task === event.parentNode.children[1].value) {
-        // delete task
-        tasks.splice(tasks.indexOf(task), 1);
+function eliminar(posicion){
+  let indexArray;
+  for(i =0 ; i<= datos.length; i++){
+    if(i == posicion){
+      indexArray = posicion;
+      break;
     }
-    });
-    localStorage.setItem("estudianteregistrado", JSON.stringify(tasks));
-   
+  }
+  datos.splice(indexArray, 1);
+  localStorage.setItem('estudianteregistrado', JSON.stringify(datos))
+  console.log(datos)
+  listar();
 
+}
+
+function editar(posicion){
+  
+  for(i =0 ; i<= datos.length; i++){
+    if(i == posicion){
+      console.log(datos[i]);
+    }
+  }
 
 }
 
