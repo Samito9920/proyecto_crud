@@ -8,3 +8,7 @@ color: blueviolet;
 .form-control{
    font-size: 13px !important;
 }
+
+td,tr{
+   text-align: center;
+}
