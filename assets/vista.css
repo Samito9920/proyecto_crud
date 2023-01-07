@@ -2,9 +2,9 @@
  position: relative !important; 
  left: 30px !important;
 }
-main{
-    background: #FAE5D3 ;
-}
 #sign:hover{
 color: blueviolet;
+}
+.form-control{
+   font-size: 13px !important;
 }
