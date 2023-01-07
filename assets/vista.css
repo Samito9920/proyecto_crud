@@ -12,3 +12,7 @@ color: blueviolet;
 td,tr{
    text-align: center;
 }
+hr{
+   margin: 10px !important;
+    color:black !important;
+}
