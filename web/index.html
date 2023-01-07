@@ -27,47 +27,38 @@
             </nav>
         </nav>
     </header>
+
     <main>
-        <div class="d-flex justify-content-center m-5">
-            <form class="form-control">
-                <div class="m-3">
-                    <h3> Registro de nuevos Estudiantes</h3>
-                </div>
-                <div class="m-3">
-                    <p> Se ha habilitado esta plataforma para realizar el registro de los nuevos Estudiantes
-                        para el año lectivo 2022-2023, es importante que se llene todos los campos.
-                    </p>
-                </div>
+        <div>
+            <div class=" d-flex flex-column justify-content-center m-5 p-2">
 
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-xl-5">
+                <form class="form-control">
+                    <div class="m-3">
+                        <h3> Registro de nuevos Estudiantes</h3>
+                    </div>
+                    <div class="m-3">
+                        <p> Se ha habilitado esta plataforma para realizar el registro de los nuevos Estudiantes
+                            para el año lectivo 2022-2023, es importante que se llene todos los campos.
+                        </p>
+                    </div>
 
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Nombres: </span>
-                                </div>
-                                <input type="text" id="nombreEstudiante" class="form-control" aria-label="Small"
-                                    aria-describedby="inputGroup-sizing-sm">
-                            </div>
-
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Cedula: </span>
-                                </div>
-                                <input type="text" id="cedulaEstudiante" class="form-control" aria-label="Small"
-                                    aria-describedby="inputGroup-sizing-sm">
-                            </div>
-
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="text-xl-start">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-xl-5">
 
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos: </span>
+                                        <span class="input-group-text" id="inputGroup-sizing-sm">Nombres: </span>
                                     </div>
                                     <input type="text" id="nombreEstudiante" class="form-control" aria-label="Small"
+                                        aria-describedby="inputGroup-sizing-sm">
+                                </div>
+
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-sm">Cedula: </span>
+                                    </div>
+                                    <input type="text" id="cedulaEstudiante" class="form-control" aria-label="Small"
                                         aria-describedby="inputGroup-sizing-sm">
                                 </div>
 
@@ -79,15 +70,143 @@
                                         aria-describedby="inputGroup-sizing-sm">
                                 </div>
 
+                            </div>
+                            <div class="col-xl-5">
+                                <div class="text-xl-start">
 
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos: </span>
+                                        </div>
+                                        <input type="text" id="nombreEstudiante" class="form-control" aria-label="Small"
+                                            aria-describedby="inputGroup-sizing-sm">
+                                    </div>
+
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de
+                                                Nacimiento:
+                                            </span>
+                                        </div>
+                                        <input type="text" id="fcNaEstudiante" class="form-control" aria-label="Small"
+                                            aria-describedby="inputGroup-sizing-sm">
+                                    </div>
+
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Email: </span>
+                                        </div>
+                                        <input type="text" id="emailEstudiante" class="form-control" aria-label="Small"
+                                            aria-describedby="inputGroup-sizing-sm">
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
+
+                        <div class="m-3">
+                            <h5 class="text-lg-start"> Registro de nuevos Estudiantes</h5>
+                        </div>
+                        <div class="container text-center">
+                            <div class="row">
+
+                                <div class="col-xl-5">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupSelect01">Nivel</label>
+                                        </div>
+                                        <select class="col-xxl-10 custom-select" id="inputGroupSelect01"
+                                            aria-describedby="inputGroup-sizing-sm">
+                                            <option selected>Escoge...</option>
+                                            <option value="1">Primaria</option>
+                                            <option value="2">Secundaria</option>
+                                            <option value="3">Bachillerato</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-xl-5">
+                                    <div class="text-xl-start">
+
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Nota del último
+                                                    año:
+                                                </span>
+                                            </div>
+                                            <input type="text" id="notaEstudiante" class="form-control"
+                                                aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                </form>
+            </div>
+
+        </div>
+
+
+        <article>
+            <div class="justify-content-center m-5 p-2">
+                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 id="myModalLabel">Delete</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button data-dismiss="modal" class="btn red" id="btnYes">Confirm</button>
                     </div>
                 </div>
+                <table class="table table-striped table-hover table-users">
+                    <thead>
+                        <tr>
 
-            </form>
-        </div>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Cedula</th>
+                            <th class="hidden-phone">Teléfono</th>
+                            <th>Fecha D. Nacimiento</th>
+                            <th>Email</th>
+                            <th>Nota último año</th>
+                            <th>Nivel</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+
+                            <td class="hidden-phone">kitty</td>
+                            <td>jane</td>
+                            <td>doe</td>
+                            <td class="hidden-phone">dasasasd@gmail.com</td>
+                            <td class="hidden-phone">active</td>
+                            <td class="hidden-phone">10/1/1999</td>
+
+                            <td><span class="label label-danger">Activo</span></td>
+
+                            <td><button type="button" class="btn btn-info">Editar</button></td>
+
+                            <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </article>
     </main>
+
     <footer class="text-center text-lg-start text-muted">
         <section class="">
             <div class="container text-center text-md-start ">
@@ -128,6 +247,7 @@
             © 2021 Copyright:
         </div>
     </footer>
+
 
 </body>
 
