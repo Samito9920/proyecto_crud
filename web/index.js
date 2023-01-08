@@ -151,7 +151,7 @@ function limpiar(){
  document.getElementById("apellidosEstudiante").value = '',
  document.getElementById("fcNaEstudiante").value = '',
  document.getElementById("emailEstudiante").value = '',
- document.getElementById("nivelEstudiante").value = '0',
+ document.getElementById("nivelEstudiante").value = "0",
  document.getElementById("notaEstudiante").value = '';
 }
 
