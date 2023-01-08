@@ -42,18 +42,8 @@ function saveTask(){
 
  localStorage.setItem('estudianteregistrado', JSON.stringify(datos))
  console.log(estudiante)
-
- //Borrar inputs
- document.getElementById("nombreEstudiante").value = '',
- document.getElementById("cedulaEstudiante").value = '', 
- document.getElementById("tlfEstudiante").value = '',
- document.getElementById("apellidosEstudiante").value = '',
- document.getElementById("fcNaEstudiante").value = '',
- document.getElementById("emailEstudiante").value = '',
- document.getElementById("nivelEstudiante").value = '0',
- document.getElementById("notaEstudiante").value = '';
-
   listar();
+  limpiar();
 }
 
 //Listar y mostrar tabla
@@ -70,7 +60,9 @@ function listar(){
                             <th>Fecha D. Nacimiento</th>
                             <th>Email</th>
                             <th>Nota último año</th>
-                            <th>Nivel</th></tr></theat>`
+                            <th>Nivel</th>
+                            <th></th>
+                            <th></th></tr></theat>`
 
     datos.forEach((element, index) => {
       table.innerHTML += 
@@ -143,10 +135,24 @@ function nuevo(){
   datos[i] = estudianteNuevo;
   console.log(datos[i]);
   localStorage.setItem('estudianteregistrado', JSON.stringify(datos));
+  limpiar();
   listar();
   btnSaveNuevo.disabled = true;
   btnSave.disabled = false;
+
  
+}
+
+function limpiar(){
+ //Borrar inputs
+ document.getElementById("nombreEstudiante").value = '',
+ document.getElementById("cedulaEstudiante").value = '', 
+ document.getElementById("tlfEstudiante").value = '',
+ document.getElementById("apellidosEstudiante").value = '',
+ document.getElementById("fcNaEstudiante").value = '',
+ document.getElementById("emailEstudiante").value = '',
+ document.getElementById("nivelEstudiante").value = '0',
+ document.getElementById("notaEstudiante").value = '';
 }
 
 init();

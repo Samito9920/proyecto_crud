@@ -4,21 +4,25 @@
         height: auto;
     }
 
-    .footer.nav {
-        height:50px;
-        line-height:50px;
-        bottom:0;
-        left:0;
-        width:100%;
+    #school{
+        margin-left: -15px;
     }
 
-    .row {
-        padding: 1em 0em;
+    #sign{
+    margin-left: 15px !important;
+    }
+    form {
+        width: 300px !important;
     }
 
-    .header{
-        margin: 1em auto;
-        display: flex;
-    }
+    table {
+        display: block;
+        overflow-x: scroll;
+        width: 300px !important;
+      }
+    
+      main{
+        margin-left: -10px;
+      }
 
 }
